@@ -94,22 +94,22 @@ Alpha Vantage API (5 stocks)
 ## Pipeline Screenshots
 
 ### ADF Pipeline Canvas
-![ADF Pipeline](<img width="1918" height="821" alt="1st pipeline" src="https://github.com/user-attachments/assets/a4843c3f-9bac-4d4a-a08d-f82d3d4f8dee" />)
+<img width="1918" height="821" alt="1st pipeline" src="https://github.com/user-attachments/assets/e89fefe7-aa1e-4c6c-8938-fe19339e7d87" />
 
 ### ADF Monitor — Successful Run
-![ADF Monitor](screenshots/adf_monitor_run.png)
+<img width="1918" height="816" alt="2nd pipeline" src="https://github.com/user-attachments/assets/81761b91-ed2c-420a-bab2-cd41089183e3" />
 
 ### Databricks Silver Transformation
-![Silver Layer](screenshots/databricks_silver_notebook.png)
+<img width="1781" height="861" alt="silver_cell6_op" src="https://github.com/user-attachments/assets/dfd1d0a3-1734-4007-b43c-952ee94252ad" />
 
 ### Databricks Gold Key Findings
-![Gold Layer](screenshots/databricks_gold_findings.png)
+<img width="1762" height="860" alt="gold_cell9_op" src="https://github.com/user-attachments/assets/5423bf42-f2ab-4f3b-b1f3-bbce349e608b" />
 
 ### Bronze Container — 5 CSV Files
-![Bronze Container](screenshots/bronze_container.png)
+<img width="1918" height="791" alt="bronze_container" src="https://github.com/user-attachments/assets/0f56f834-9dc7-44a2-8d97-6edef393f28e" />
 
 ### Silver Container — Partitioned by Symbol
-![Silver Container](screenshots/silver_container.png)
+<img width="1918" height="752" alt="silver_container" src="https://github.com/user-attachments/assets/ebeb5af3-f9cd-468f-9e68-1fe9147c98c7" />
 
 ---
 
@@ -123,7 +123,7 @@ stock-market-pipeline/
 │   └── 02_gold_layer.ipynb           # SQL analytics queries
 │
 ├── output/
-│   └── bronze/                        # Raw CSV files (5 stocks)
+│   └── bronze/stock_data               # Raw CSV files (5 stocks)
 │
 ├── screenshots/                       # Pipeline evidence
 └── requirements.txt
@@ -164,4 +164,4 @@ git clone https://github.com/patilmanish1486/stock-market-pipeline.git
 ---
 
 *Built by Manish Patil — Final Year IT Engineering Student, SPPU, Pune*
-*Connect on [LinkedIn](https://linkedin.com/in/YOUR_LINKEDIN_HERE)*
+*Connect on [LinkedIn](https://www.linkedin.com/in/manish-patil-009389321)*
