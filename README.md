@@ -130,6 +130,18 @@ stock-market-pipeline/
 ```
 
 ---
+## Challenges & How I Solved Them
+
+| # | Problem | Root Cause | Solution | What I Learned |
+|---|---|---|---|---|
+| 1 | 3 stock CSV files had 1 column instead of 6 | Alpha Vantage API rate limit hit — returned JSON error instead of CSV data | Re-ingested each broken stock individually with 60s delay between calls | Always validate schema of every file before union operations |
+| 2 | PySpark UNION failed with column mismatch | Raw CSVs had no symbol column — added it after union instead of before | Added `withColumn("symbol", lit(stock))` inside the loop before union | Schema must be consistent across all dataframes before combining |
+| 3 | `to_date` NameError in PySpark | Databricks session expired — all imports wiped from memory | Re-ran all cells from Cell 1 after every session restart | Always run notebooks top-to-bottom after session expiry |
+| 4 | ADF ForEach Items validation error | Items field left empty — expression not added to ForEach settings | Used `@json('["AAPL","MSFT","GOOGL","AMZN","TSLA"]')` expression | ADF expressions require specific syntax — always validate before publish |
+| 5 | GitHub push rejected due to secret detection | Azure Storage Key was committed inside Databricks notebook | Deleted repo, removed key from notebook, force pushed clean history | Never commit credentials — always use placeholder variables |
+| 6 | ADF-Databricks notebook trigger inactive principal error | Pay-as-you-go account restrictions on service principal binding | Ran Databricks notebooks independently — documented manual trigger steps | Understand account-level restrictions before designing automation |
+
+---
 
 ## How to Run
 ```bash
